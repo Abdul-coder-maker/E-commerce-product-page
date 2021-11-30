@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: "Kumbh Sans", sans-serif !important;
+  /* background-color: hsla(0, 0%, 0%);
+  opacity: 75%; */
+}
+header {
+  background-color: white;
+}
+
+#container_lightbox {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+  );
+}
