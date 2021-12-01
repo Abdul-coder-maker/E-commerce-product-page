@@ -53,7 +53,7 @@ addToCartBtn.addEventListener("click", () => {
     <button id="checkout" class="w-full
             bg-[#FF7E1B]
             text-white
-            pt-[22px] pb-[18px] rounded-xl font-bold mt-6">Checkut</button>
+            pt-[22px] pb-[18px] rounded-xl font-bold mt-6">Checkout</button>
     `;
   }
   cartNumber.textContent = count;
