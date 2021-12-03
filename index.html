@@ -1,158 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="style.css" />
-  <title>E-commerce product page</title>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .swiper-pagination-bullet {
-      width: 88px;
-      height: 88px;
-      border-radius: 10px !important;
-      background-size: contain;
-      opacity: 1;
-    }
-
-    .swiper-pagination-bullet:nth-child(1) {
-      background-image: url("/images/image-product-1-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet:nth-child(2) {
-      background-image: url("/images/image-product-2-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet:nth-child(3) {
-      background-image: url("/images/image-product-3-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet:nth-child(4) {
-      background-image: url("/images/image-product-4-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet-active:nth-child(1) {
-      border: 2px solid #ff7e1b;
-      background-image: linear-gradient(to bottom,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.75)),
-        url("images/image-product-1-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet-active:nth-child(2) {
-      border: 2px solid #ff7e1b;
-      background-image: linear-gradient(to bottom,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.75)),
-        url("images/image-product-2-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet-active:nth-child(3) {
-      border: 2px solid #ff7e1b;
-      background-image: linear-gradient(to bottom,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.75)),
-        url("images/image-product-3-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination-bullet-active:nth-child(4) {
-      border: 2px solid #ff7e1b;
-      background-image: linear-gradient(to bottom,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.75)),
-        url("images/image-product-4-thumbnail.jpg") !important;
-    }
-
-    .swiper-pagination .swiper-pagination-bullets .swiper-pagination-horizontal {
-      margin-top: 200px;
-    }
-
-    #sideNav {
-      width: calc(100% - 250px);
-    }
-
-    .swiper {
-      width: 100%;
-      /* height: 500px; */
-    }
-
-    .swiper-button-next {
-      right: 16px;
-    }
-
-    .swiper-button-prev {
-      left: 16px;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      background-color: white;
-      border-radius: 9999px;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    @media (min-width: 1024px) {
-      .attribution {
-      padding-bottom: 0;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce product page</title>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .swiper-pagination-bullet {
+        width: 88px;
+        height: 88px;
+        border-radius: 10px !important;
+        background-size: contain;
+        opacity: 1;
       }
-      .swiper-button-next,
-      .swiper-button-prev {
-        width: 56px;
-        height: 56px;
-        transform: translateY(-90%);
+      .swiper-pagination-bullet {
+        transition: all 2s linear !important;
+      }
+      .swiper-pagination-bullet:nth-child(1) {
+        background-image: url("/images/image-product-1-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(2) {
+        background-image: url("/images/image-product-2-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(3) {
+        background-image: url("/images/image-product-3-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(4) {
+        background-image: url("/images/image-product-4-thumbnail.jpg") !important;
+      }
+      .swiper-pagination-bullet:nth-child(1):hover {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-1-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(2):hover {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-2-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(3):hover {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-3-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet:nth-child(4):hover {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-4-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet-active:nth-child(1) {
+        border: 2px solid #ff7e1b;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-1-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet-active:nth-child(2) {
+        border: 2px solid #ff7e1b;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-2-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet-active:nth-child(3) {
+        border: 2px solid #ff7e1b;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-3-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination-bullet-active:nth-child(4) {
+        border: 2px solid #ff7e1b;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+          ),
+          url("images/image-product-4-thumbnail.jpg") !important;
+      }
+
+      .swiper-pagination
+        .swiper-pagination-bullets
+        .swiper-pagination-horizontal {
+        margin-top: 200px;
+      }
+
+      #sideNav {
+        width: calc(100% - 250px);
+      }
+
+      .swiper {
+        width: 100%;
+        /* height: 500px; */
       }
 
       .swiper-button-next {
-        right: 0;
+        right: 16px;
       }
 
       .swiper-button-prev {
-        left: 0;
+        left: 16px;
       }
-    }
 
-    .swiper-button-prev::after {
-      content: "";
-    }
+      .swiper-button-next,
+      .swiper-button-prev {
+        background-color: white;
+        border-radius: 9999px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .swiper-button-next::after {
-      content: "";
-    }
+      @media (min-width: 1024px) {
+        .attribution {
+          padding-bottom: 0;
+        }
 
-    .lg\:left-\[991px\].lg\:top-\[94px\].lg\:fixed.absolute.top-2.left-2.bg-white.z-50.rounded-xl.w-\[96\%\].h-\[256px\].lg\:h-\[256px\].lg\:w-\[360px\].flex.flex-col {
-      box-shadow: 0px 20px 50px rgba(29, 32, 38, 0.5031);
-    }
+        .swiper-button-next,
+        .swiper-button-prev {
+          width: 56px;
+          height: 56px;
+          transform: translateY(-90%);
+        }
 
-    .attribution {
-      font-size: 13px;
-      padding-bottom: 16px;
-      text-align: center;
-    }
+        .swiper-button-next {
+          right: 0;
+        }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
+        .swiper-button-prev {
+          left: 0;
+        }
+      }
 
-    #addToCart {
-      box-shadow: 0 20px 50px -20px #ff7e1b;
-    }
-  </style>
-</head>
+      .swiper-button-prev::after {
+        content: "";
+      }
 
-<body x-data="{open: false, cart: false}" class="antialiased min-h-screen">
-  <div id="container_lightbox" class="
+      .swiper-button-next::after {
+        content: "";
+      }
+
+      .lg\:left-\[991px\].lg\:top-\[94px\].lg\:fixed.absolute.top-2.left-2.bg-white.z-50.rounded-xl.w-\[96\%\].h-\[256px\].lg\:h-\[256px\].lg\:w-\[360px\].flex.flex-col {
+        box-shadow: 0px 20px 50px rgba(29, 32, 38, 0.5031);
+      }
+
+      .attribution {
+        font-size: 13px;
+        padding-bottom: 16px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      #addToCartBtn {
+        box-shadow: 0 20px 50px -20px #ff7e1b;
+      }
+      .text-\[15px\].leading-\[26px\].text-\[\#69707D\]:hover::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #ff7e1b;
+        left: 0;
+        top: 70px;
+      }
+    </style>
+  </head>
+
+  <body x-data="{open: false, cart: false}" class="antialiased min-h-screen">
+    <div
+      id="container_lightbox"
+      class="
         min-h-screen
         w-screen
         hidden
@@ -160,48 +229,96 @@
         z-50
         justify-center
         items-center
-      ">
-    <div class="w-[550px] !opacity-100 relative">
-      <svg id="close_lightbox" class="cursor-pointer absolute top-0 right-0" width="14" height="15"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
-          fill="#fff" fill-rule="evenodd" />
-      </svg>
-      <div class="swiper relative z-10 lg:h-[700px] lg:w-[550px] mt-[44px]">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img class="w-full mx-auto lg:rounded-[15px]" alt="image-product-1" src="/images/image-product-1.jpg" />
+      "
+    >
+      <div class="w-[550px] !opacity-100 relative">
+        <svg
+          id="close_lightbox"
+          class="
+            cursor-pointer
+            absolute
+            top-0
+            right-0
+            text-white
+            hover:text-[#FF7E1B]
+          "
+          width="14"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <div class="swiper relative z-10 lg:h-[700px] lg:w-[550px] mt-[44px]">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                class="w-full mx-auto lg:rounded-[15px]"
+                alt="image-product-1"
+                src="/images/image-product-1.jpg"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full mx-auto lg:rounded-[15px]"
+                alt="image-product-2"
+                src="/images/image-product-2.jpg"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full mx-auto lg:rounded-[15px]"
+                alt="image-product-3"
+                src="/images/image-product-3.jpg"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full mx-auto lg:rounded-[15px]"
+                alt="image-product-4"
+                src="/images/image-product-4.jpg"
+              />
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img class="w-full mx-auto lg:rounded-[15px]" alt="image-product-2" src="/images/image-product-2.jpg" />
-          </div>
-          <div class="swiper-slide">
-            <img class="w-full mx-auto lg:rounded-[15px]" alt="image-product-3" src="/images/image-product-3.jpg" />
-          </div>
-          <div class="swiper-slide">
-            <img class="w-full mx-auto lg:rounded-[15px]" alt="image-product-4" src="/images/image-product-4.jpg" />
-          </div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination hidden lg:block"></div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination hidden lg:block"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev">
-          <img class="" src="/images/icon-previous.svg" alt="previous" />
-        </div>
-        <div class="swiper-button-next">
-          <img class="" src="/images/icon-next.svg" alt="next" />
-        </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev">
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
 
-        <!-- If we need scrollbar -->
-        <!--   <div class="swiper-scrollbar"></div> -->
+          <!-- If we need scrollbar -->
+          <!--   <div class="swiper-scrollbar"></div> -->
+        </div>
       </div>
     </div>
-  </div>
-  <header class="
+    <header
+      class="
         px-6
         pt-[19px]
         pb-[25px]
@@ -211,34 +328,42 @@
         max-w-[1110px]
         mx-auto
         lg:pb-[34px] lg:border-b-2 lg:border-[#E4E9F2] lg:px-0 lg:pt-[28px]
-      ">
-    <div class="flex space-x-4 items-center lg:space-x-[56.5px]">
-      <div class="lg:hidden">
-        <img id="menu" @click="open = !open" class="w-4 h-[15px] cursor-pointer" src="/images/icon-menu.svg"
-          alt="menu" />
+      "
+    >
+      <div class="flex space-x-4 items-center lg:space-x-[56.5px]">
+        <div class="lg:hidden">
+          <img
+            id="menu"
+            @click="open = !open"
+            class="w-4 h-[15px] cursor-pointer"
+            src="/images/icon-menu.svg"
+            alt="menu"
+          />
+        </div>
+        <img class="w-[137.5px] lg:!ml-0" src="/images/logo.svg" alt="logo" />
+        <ul class="hidden lg:flex space-x-8">
+          <li class="text-[15px] leading-[26px] text-[#69707D] relative">
+            <a href="#">Collection</a>
+          </li>
+          <li class="text-[15px] leading-[26px] text-[#69707D] relative">
+            <a href="#">Men</a>
+          </li>
+          <li class="text-[15px] leading-[26px] text-[#69707D] relative">
+            <a href="#">Women</a>
+          </li>
+          <li class="text-[15px] leading-[26px] text-[#69707D] relative">
+            <a href="#">About</a>
+          </li>
+          <li class="text-[15px] leading-[26px] text-[#69707D] relative">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
       </div>
-      <img class="w-[137.5px] lg:!ml-0" src="/images/logo.svg" alt="logo" />
-      <ul class="hidden lg:flex space-x-8">
-        <li class="text-[15px] leading-[26px] text-[#69707D]">
-          <a href="#">Collection</a>
-        </li>
-        <li class="text-[15px] leading-[26px] text-[#69707D]">
-          <a href="#">Men</a>
-        </li>
-        <li class="text-[15px] leading-[26px] text-[#69707D]">
-          <a href="#">Women</a>
-        </li>
-        <li class="text-[15px] leading-[26px] text-[#69707D]">
-          <a href="#">About</a>
-        </li>
-        <li class="text-[15px] leading-[26px] text-[#69707D]">
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <div class="flex space-x-[22.18px] lg:space-x-[46.18px] items-center">
-      <div class="relative">
-        <p id="cartNumber" class="
+      <div class="flex space-x-[22.18px] lg:space-x-[46.18px] items-center">
+        <div class="relative">
+          <p
+            id="cartNumber"
+            class="
               bg-[#FF7E1B]
               w-[19px]
               h-[13px]
@@ -253,13 +378,20 @@
               -top-1/3
               left-1/2
               hidden
-            ">
-          0
-        </p>
-        <img @click="cart = !cart" class="w-[21.82px] h-5 cursor-pointer" src="/images/icon-cart.svg" alt="icon cart" />
-      </div>
+            "
+          >
+            0
+          </p>
+          <img
+            @click="cart = !cart"
+            class="w-[21.82px] h-5 cursor-pointer"
+            src="/images/icon-cart.svg"
+            alt="icon cart"
+          />
+        </div>
 
-      <img class="
+        <img
+          class="
             w-6
             h-6
             lg:w-[50px] lg:h-[50px]
@@ -267,25 +399,35 @@
             rounded-full
             transition-colors
             duration-500
-          " src="/images/image-avatar.png" alt="avatar" />
-    </div>
-  </header>
-  <nav x-show="open" class="w-screen h-screen flex absolute z-40 top-0 left-0">
-    <div class="w-[250px] h-screen bg-white relative">
-      <div class="absolute top-[24.78px] left-[25.28px]" @click="open = !open">
-        <img src="/images/icon-close.svg" alt="close" />
+          "
+          src="/images/image-avatar.png"
+          alt="avatar"
+        />
       </div>
-      <ul class="mt-[92px] ml-[25px] space-y-5 text-[#1d2025]">
-        <li class="font-bold text-lg leading-[26px]">Collections</li>
-        <li class="font-bold text-lg leading-[26px]">Men</li>
-        <li class="font-bold text-lg leading-[26px]">Women</li>
-        <li class="font-bold text-lg leading-[26px]">About</li>
-        <li class="font-bold text-lg leading-[26px]">Sneaker Company</li>
-      </ul>
-    </div>
-    <div id="sideNav" class="bg-black opacity-75"></div>
-  </nav>
-  <main class="
+    </header>
+    <nav
+      x-show="open"
+      class="w-screen h-screen flex absolute z-40 top-0 left-0"
+    >
+      <div class="w-[250px] h-screen bg-white relative">
+        <div
+          class="absolute top-[24.78px] left-[25.28px]"
+          @click="open = !open"
+        >
+          <img src="/images/icon-close.svg" alt="close" />
+        </div>
+        <ul class="mt-[92px] ml-[25px] space-y-5 text-[#1d2025]">
+          <li class="font-bold text-lg leading-[26px]">Collections</li>
+          <li class="font-bold text-lg leading-[26px]">Men</li>
+          <li class="font-bold text-lg leading-[26px]">Women</li>
+          <li class="font-bold text-lg leading-[26px]">About</li>
+          <li class="font-bold text-lg leading-[26px]">Sneaker Company</li>
+        </ul>
+      </div>
+      <div id="sideNav" class="bg-black opacity-75"></div>
+    </nav>
+    <main
+      class="
         max-w-[1050px]
         mx-auto
         lg:flex
@@ -295,10 +437,14 @@
         lg:justify-between
         lg:items-center
         lg:h-[565px]
-      ">
-    <!-- Slider main container -->
-    <div class="swiper relative z-10 lg:h-[565px] lg:w-[445px] lg:!mx-0">
-      <div x-show="cart" @click.away="cart = false" class="
+      "
+    >
+      <!-- Slider main container -->
+      <div class="swiper relative z-10 lg:h-[565px] lg:w-[445px] lg:!mx-0">
+        <div
+          x-show="cart"
+          @click.away="cart = false"
+          class="
             lg:left-[991px] lg:top-[94px] lg:fixed
             absolute
             top-2
@@ -310,8 +456,10 @@
             h-[256px]
             lg:h-[256px] lg:w-[360px]
             flex flex-col
-          ">
-        <p class="
+          "
+        >
+          <p
+            class="
               pt-6
               pl-6
               pb-[27px]
@@ -319,34 +467,22 @@
               bprder-gray-500
               text-[#1D2026]
               font-bold
-            ">
-          Cart
-        </p>
-        <div class="flex-grow flex justify-center items-center text-center">
-          <p id="cartContent" class="leading-[26px] text-[#69707D] font-bold">
-            Your cart is empty.
+            "
+          >
+            Cart
           </p>
+          <div class="flex-grow flex justify-center items-center text-center">
+            <p id="cartContent" class="leading-[26px] text-[#69707D] font-bold">
+              Your cart is empty.
+            </p>
+          </div>
         </div>
-      </div>
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img class="
-                object-cover      
-                w-full
-                h-[300px]
-                sm:h-[500px]
-                md:h-[560px]
-                lg:h-[445px] lg:!w-[455px]
-                mx-auto
-                lg:rounded-[15px]
-                images_lightbox
-                lg:cursor-pointer
-              " alt="image-product-1" src="/images/image-product-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img class="
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              class="
                 object-cover
                 w-full
                 h-[300px]
@@ -357,11 +493,15 @@
                 lg:rounded-[15px]
                 images_lightbox
                 lg:cursor-pointer
-              " alt="image-product-2" src="/images/image-product-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img class="
-                object-cover      
+              "
+              alt="image-product-1"
+              src="/images/image-product-1.jpg"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="
+                object-cover
                 w-full
                 h-[300px]
                 sm:h-[500px]
@@ -371,11 +511,15 @@
                 lg:rounded-[15px]
                 images_lightbox
                 lg:cursor-pointer
-              " alt="image-product-3" src="/images/image-product-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img class="
-                object-cover      
+              "
+              alt="image-product-2"
+              src="/images/image-product-2.jpg"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="
+                object-cover
                 w-full
                 h-[300px]
                 sm:h-[500px]
@@ -385,31 +529,55 @@
                 lg:rounded-[15px]
                 images_lightbox
                 lg:cursor-pointer
-              " alt="image-product-4" src="/images/image-product-4.jpg" />
+              "
+              alt="image-product-3"
+              src="/images/image-product-3.jpg"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="
+                object-cover
+                w-full
+                h-[300px]
+                sm:h-[500px]
+                md:h-[560px]
+                lg:h-[445px] lg:!w-[455px]
+                mx-auto
+                lg:rounded-[15px]
+                images_lightbox
+                lg:cursor-pointer
+              "
+              alt="image-product-4"
+              src="/images/image-product-4.jpg"
+            />
+          </div>
         </div>
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination hidden lg:block lg:space-x-6"></div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination hidden lg:block lg:space-x-6"></div>
 
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev lg:hidden">
-        <img class="" src="/images/icon-previous.svg" alt="previous" />
-      </div>
-      <div class="swiper-button-next lg:hidden">
-        <img class="" src="/images/icon-next.svg" alt="next" />
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev lg:hidden">
+          <img class="" src="/images/icon-previous.svg" alt="previous" />
+        </div>
+        <div class="swiper-button-next lg:hidden">
+          <img class="" src="/images/icon-next.svg" alt="next" />
+        </div>
+
+        <!-- If we need scrollbar -->
+        <!--   <div class="swiper-scrollbar"></div> -->
       </div>
 
-      <!-- If we need scrollbar -->
-      <!--   <div class="swiper-scrollbar"></div> -->
-    </div>
-
-    <div class="
+      <div
+        class="
           max-w-[327px]
           mx-auto
           lg:mx-0 lg:max-w-[445px] lg:h-[426px]
           sm:max-w-2xl
-        ">
-      <p class="
+        "
+      >
+        <p
+          class="
             text-[#FF7E1B]
             uppercase
             tracking-[1.85px]
@@ -419,10 +587,13 @@
             mt-6
             sm:text-center
             lg:text-left lg:mt-0
-          " translate="no">
-        Sneaker Company
-      </p>
-      <h1 class="
+          "
+          translate="no"
+        >
+          Sneaker Company
+        </p>
+        <h1
+          class="
             mt-[19px]
             sm:text-center
             lg:text-left
@@ -433,25 +604,31 @@
             lg:text-[44px]
             leading-[48px]
             lg:mt-[27px]
-          ">
-        Fall Limited Edition Sneakers
-      </h1>
-      <p class="
+          "
+        >
+          Fall Limited Edition Sneakers
+        </h1>
+        <p
+          class="
             mt-[15px]
             text-[#69707D] text-[15px]
             leading-[25px]
             lg:mt-[32px]
             sm:text-center
             lg:text-left
-          ">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything
-        the weather can offer.
-      </p>
-      <div class="mt-6 flex flex-col justify-between">
-        <div class="flex items-center space-x-4">
-          <span class="font-bold text-[#1D2026] text-[28px] leading-[28.16px]">$125.00</span>
-          <span class="
+          "
+        >
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="mt-6 flex flex-col justify-between">
+          <div class="flex items-center space-x-4">
+            <span class="font-bold text-[#1D2026] text-[28px] leading-[28.16px]"
+              >$125.00</span
+            >
+            <span
+              class="
                 bg-[#FFEEE2]
                 text-[#FF7E1B]
                 rounded-md
@@ -460,16 +637,19 @@
                 leading-[16.09px]
                 px-2
                 py-[7px]
-              ">50%</span>
+              "
+              >50%</span
+            >
+          </div>
+          <div>
+            <p class="text-[#B6BCC8] text-[16px] leading-[26px] font-bold">
+              <s>$250.00</s>
+            </p>
+          </div>
         </div>
-        <div>
-          <p class="text-[#B6BCC8] text-[16px] leading-[26px] font-bold">
-            <s>$250.00</s>
-          </p>
-        </div>
-      </div>
-      <div class="lg:flex lg:mt-8 lg:h-[56px] lg:space-x-4">
-        <div class="
+        <div class="lg:flex lg:mt-8 lg:h-[56px] lg:space-x-4">
+          <div
+            class="
               bg-[#F6F8FD]
               flex
               justify-around
@@ -478,17 +658,70 @@
               mt-6
               rounded-xl
               lg:mt-0 lg:w-[157px]
-            ">
-          <div>
-            <img id="minusCount" class="cursor-pointer w-6 lg:w-3" src="/images/icon-minus.svg" alt="minus" />
+            "
+          >
+            <div>
+              <svg
+                id="minusCount"
+                class="
+                  cursor-pointer
+                  w-6
+                  lg:w-3
+                  fill-current
+                  text-[#FF7E1B]
+                  hover:text-[#FFAB6A]
+                  transition-colors
+                  duration-500
+                  ease
+                "
+                width="12"
+                height="4"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a"
+                  />
+                </defs>
+                <use fill="currentColor" fill-rule="nonzero" xlink:href="#a" />
+              </svg>
+            </div>
+            <p id="numberOfItems" class="text-[#1D2026] font-bold">0</p>
+            <div>
+              <svg
+                id="plusCount"
+                class="
+                  cursor-pointer
+                  w-6
+                  lg:w-3
+                  fill-current
+                  text-[#FF7E1B]
+                  hover:text-[#FFAB6A]
+                  transition-colors
+                  duration-500
+                  ease
+                "
+                width="12"
+                height="12"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b"
+                  />
+                </defs>
+                <use fill="currentColor" fill-rule="nonzero" xlink:href="#b" />
+              </svg>
+            </div>
           </div>
-          <p id="numberOfItems" class="text-[#1D2026] font-bold">0</p>
-          <div>
-            <img id="plusCount" class="cursor-pointer w-6 lg:w-3" src="/images/icon-plus.svg" alt="plus" />
-          </div>
-        </div>
-        <button id="addToCartBtn" class="
-              font-bold                          
+          <button
+            id="addToCartBtn"
+            class="
+              font-bold
               space-x-[15.54px]
               w-full
               bg-[#FF7E1B]
@@ -501,27 +734,48 @@
               rounded-xl
               mb-[88px]
               lg:mb-0 lg:mt-0 lg:w-[272px]
-            ">
-          <svg class="" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-              fill="#ffffff" fill-rule="nonzero" />
-          </svg>
-          <span>Add to cart</span> 
-        </button>
+              hover:!shadow-none
+              transition-all
+              duration-500
+              ease-in
+              hover:bg-[#FFAB6A]
+            "
+          >
+            <svg
+              class=""
+              width="22"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="#ffffff"
+                fill-rule="nonzero"
+              />
+            </svg>
+            <span>Add to cart</span>
+          </button>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="attribution font-mono text-purple-800 font-semibold">
-    Challenge by
-    <a rel="noreferrer noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by
-    <a rel="noreferrer noopener" target="_blank" href="https://twitter.com/AbdulrahmanDev">Aabdulrahman</a>.
-  </footer>
+    <footer class="attribution font-mono text-purple-800 font-semibold">
+      Challenge by
+      <a
+        rel="noreferrer noopener"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        href="https://twitter.com/AbdulrahmanDev"
+        >Aabdulrahman</a
+      >.
+    </footer>
 
-  <script defer src="app.js"></script>
-  <script src="https://cdn-tailwindcss.vercel.app/"></script>
-</body>
-
+    <script defer src="app.js"></script>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+  </body>
 </html>
